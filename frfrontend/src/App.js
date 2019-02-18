@@ -77,17 +77,17 @@ class App extends Component {
 
   onSubmit =(event)=> {
     this.setState({ imageURL: this.state.input });
-      fetch('http://localhost:3020/imageurl', {
+      fetch('https://fast-stream-79897.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           input : this.state.input
-        })
+        })  
       })
       .then(response => response.json())
       .then(response => {
         if(response) {
-          fetch('http://localhost:3020/image', {
+          fetch('https://fast-stream-79897.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
