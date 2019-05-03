@@ -79,9 +79,10 @@ class App extends Component {
     this.setState({ imageURL: this.state.input });
       fetch('https://fast-stream-79897.herokuapp.com/imageurl', {
         method: 'post',
+        mode: "no-cors",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          input : this.state.input
+          input: this.state.input
         })  
       })
       .then(response => response.json())
